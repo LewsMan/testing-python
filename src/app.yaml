@@ -1,0 +1,25 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+module: default
+instance_class: F1
+
+default_expiration: "8d"
+
+libraries:
+
+- name: django
+  version: "1.2"
+
+- name: pycrypto
+  version: latest
+
+handlers:
+
+- url: /static_1
+  static_dir: static_1
+
+- url: /.*
+  script: main.app
+
